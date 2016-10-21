@@ -8,7 +8,7 @@ namespace Eloqua.Api.Rest.ClientLibrary.Tests.Clients.Assets
     {
         private Client _client;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void Init()
         {
             _client = new Client("sites", "user", "password", Constants.BaseUrl);
@@ -25,7 +25,7 @@ namespace Eloqua.Api.Rest.ClientLibrary.Tests.Clients.Assets
         public void CreateContactField()
         {
             var field = new ContactField { name = "V_Notes", dataType = "largeText", updateType = "always", displayType = "text" };
-            field = _client.Assets.ContactFields.Post(field);
+            field = _client.Assets.ContactField.Post(field);
             Assert.That(field.id, Is.Not.Null);
 
         }
