@@ -17,7 +17,7 @@ namespace Eloqua.Api.Rest.ClientLibrary.Tests.Clients.Assets
         [Test]
         public void SearchContactFields()
         {
-            var fields = _client.Assets.ContactFields.Get("*", 1, 100);
+            var fields = _client.Assets.ContactField.Get("*", 1, 100);
             Assert.Greater(fields.total, 0);
         }
 
