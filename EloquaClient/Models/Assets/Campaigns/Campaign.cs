@@ -5,23 +5,27 @@ namespace Eloqua.Api.Rest.ClientLibrary.Models.Assets.Campaigns
     [Resource("/assets/campaign", "Campaign")]
     public class Campaign : RestObject, ISearchable
     {
+        public string currentStatus { get; set; }
+        public int memberCount { get; set; }
+        public int? folderId { get; set; }
         public int? createdAt { get; set; }
         public int? createdBy { get; set; }
-        public int? folderId { get; set; }
-        public new string name { get; set; }
         public int? updatedAt { get; set; }
         public int? updatedBy { get; set; }
+        public bool? isReadOnly { get; set; }
+        public int? runAsUserId { get; set; }
         public float? actualCost { get; set; }
         public float? budgetedCost { get; set; }
-        public string campaignType { get; set; }
-        public List<CampaignRelatedElement> elements { get; set; }
+        public string campaignCategory { get; set; }
+        public string crmId { get; set; }
         public int? startAt { get; set; }
         public int? endAt { get; set; }
-        public bool? isIncludedInROI { get; set; }
-        public bool? isMemberAllowedReEntry { get; set; }
-        public bool? isReadOnly { get; set; }
-        public bool? isSyncedWithCRM { get; set; }
-        public int? runAsUserId { get; set; }
+
+        public List<CampaignField> fieldValues { get; set; }
+
+        public List<string> permissions { get; set; }
+
+        public List<CampaignRelatedElement> elements { get; set; }
 
         #region ISearchable
 

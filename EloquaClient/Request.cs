@@ -51,6 +51,7 @@ namespace Eloqua.Api.Rest.ClientLibrary
 
                 case Type.Search:
                     request.Method = Method.GET;
+                    request.Timeout = 600000;
 
                     var resource = new StringBuilder(100);
                     resource.Append(restObj.Uri);

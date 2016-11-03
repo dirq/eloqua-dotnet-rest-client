@@ -16,7 +16,7 @@ namespace Eloqua.Api.Rest.ClientLibrary.Exceptions
         public ValidationException(IRestResponse response)
         {
             StatusCode = response.StatusCode;
-            ErrorMessage = response.StatusCode.ToString();
+            ErrorMessage = response.ErrorMessage;
             ResponseContent = response.Content;
             ValidationError = new List<ObjectValidationError>();
         }

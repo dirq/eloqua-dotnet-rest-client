@@ -26,7 +26,7 @@ namespace Eloqua.Api.Rest.ClientLibrary.Clients
             return _baseClient.Put(data);
         }
 
-        public void Delete(int? id)
+        public void Delete(long? id)
         {
             var data = new T { id = id };
             _baseClient.Delete<T>(data);
