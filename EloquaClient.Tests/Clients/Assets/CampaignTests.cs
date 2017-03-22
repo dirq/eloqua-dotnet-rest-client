@@ -24,7 +24,7 @@ namespace Eloqua.Api.Rest.ClientLibrary.Tests.Clients.Assets
             int page = 1;
             do
             {
-                fields = _client.Assets.Campaign.Get("*", page, 300, Depth.partial);
+                fields = _client.Assets.Campaign.Get("*", page, 300, "", Depth.partial);
                 page++;
 
             } while (fields.elements.Count == 300);

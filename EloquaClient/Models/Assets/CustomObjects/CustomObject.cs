@@ -23,6 +23,7 @@ namespace Eloqua.Api.Rest.ClientLibrary.Models.Assets.CustomObjects
         public int page { get; set; }
         public int pageSize { get; set; }
         public string searchTerm { get; set; }
+        public string orderByField { get; set; }
 
         #endregion
     }

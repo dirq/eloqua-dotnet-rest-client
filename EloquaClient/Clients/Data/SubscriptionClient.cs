@@ -23,13 +23,13 @@ namespace Eloqua.Api.Rest.ClientLibrary.Clients.Data
             return _baseClient.Execute<ContactEmailSubscription>(request);
         }
 
-        public List<ContactEmailSubscription> Get(int? contactId, string searchTerm, int page, int pageSize)
+        public List<ContactEmailSubscription> Get(int? contactId, string searchTerm, int page, int pageSize, string orderBy = "")
         {
             var request = new RestRequest
             {
                 RequestFormat = DataFormat.Json,
                 RootElement = "elements",
-                Resource = string.Format("/data/contact/{0}/email/groups/subscription?search={1}&page={2}&count={3}", contactId, searchTerm, page, pageSize)
+                Resource = string.Format("/data/contact/{0}/email/groups/subscription?search={1}&page={2}&count={3}&orderBy{4}", contactId, searchTerm, page, pageSize, orderBy)
             };
 
             return _baseClient.Execute<List<ContactEmailSubscription>>(request);

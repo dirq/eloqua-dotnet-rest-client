@@ -32,18 +32,19 @@ namespace Eloqua.Api.Rest.ClientLibrary.Clients
             _baseClient.Delete<T>(data);
         }
 
-        public SearchResponse<T> Get(string search, int pageNumber, int pageSize, Depth depth = Depth.complete)
+        public SearchResponse<T> Get(string search, int pageNumber, int pageSize, string orderBy = "", Depth depth = Depth.complete)
         {
             return _baseClient.Search<T>(new T
                 {
                     searchTerm = search,
                     page = pageNumber,
                     pageSize = pageSize,
-                    depth = depth.ToString()
+                    depth = depth.ToString(),
+                    orderByField = orderBy
                 });
         }
 
-        public SearchResponse<T> Get(int? id, string search, int pageNumber, int pageSize, Depth depth = Depth.complete)
+        public SearchResponse<T> Get(int? id, string search, int pageNumber, int pageSize, string orderBy = "", Depth depth = Depth.complete)
         {
             return _baseClient.Search<T>(new T
                     {
@@ -51,7 +52,8 @@ namespace Eloqua.Api.Rest.ClientLibrary.Clients
                         searchTerm = search,
                         page = pageNumber,
                         pageSize = pageSize,
-                        depth = depth.ToString()
+                        depth = depth.ToString(),
+                        orderByField = orderBy
                     });
         }
     }

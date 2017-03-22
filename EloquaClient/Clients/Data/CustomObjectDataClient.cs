@@ -38,14 +38,15 @@ namespace Eloqua.Api.Rest.ClientLibrary.Clients.Data
             _baseClient.Execute<CustomObjectData>(request);
         }
 
-        public SearchResponse<CustomObjectData> Get(int parentId, string search, int pageNumber, int pageSize, Depth depth = Depth.complete)
+        public SearchResponse<CustomObjectData> Get(int parentId, string search, int pageNumber, int pageSize, string orderBy = "", Depth depth = Depth.complete)
         {
             var request = Request.Get(Request.Type.Search, parentId, new CustomObjectData
             {
                 searchTerm = search,
                 page = pageNumber,
                 pageSize = pageSize,
-                depth = depth.ToString()
+                depth = depth.ToString(),
+                orderByField = orderBy
             });
             return _baseClient.Execute<SearchResponse<CustomObjectData>>(request);
         }

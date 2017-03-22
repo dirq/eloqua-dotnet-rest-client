@@ -68,7 +68,8 @@ namespace Eloqua.Api.Rest.ClientLibrary
                     resource.Append("?search=" + searchObj.searchTerm +
                                     "&count=" + searchObj.pageSize +
                                     "&page=" + searchObj.page +
-                                    "&depth=" + restObj.depth
+                                    "&depth=" + restObj.depth +
+                                    "&orderBy=" + searchObj.orderByField
                                     );
 
                     request.Resource = resource.ToString();
@@ -128,7 +129,8 @@ namespace Eloqua.Api.Rest.ClientLibrary
                     resource.Append("/instances?count=" + searchObj.pageSize +
                                     "&page=" + searchObj.page +
                                     "&depth=" + restObj.depth +
-                                    "&search=" + searchObj.searchTerm);
+                                    "&search=" + searchObj.searchTerm +
+                                    "&orderBy=" + restObj.orderByField);
 
                     request.Resource = resource.ToString();
 

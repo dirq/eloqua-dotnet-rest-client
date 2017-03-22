@@ -14,8 +14,8 @@ namespace Eloqua.Api.Rest.ClientLibrary.Models.Assets.Campaigns
         public int? updatedBy { get; set; }
         public bool? isReadOnly { get; set; }
         public int? runAsUserId { get; set; }
-        public float? actualCost { get; set; }
-        public float? budgetedCost { get; set; }
+        public decimal? actualCost { get; set; }
+        public decimal? budgetedCost { get; set; }
         public string campaignCategory { get; set; }
         public string crmId { get; set; }
         public int? startAt { get; set; }
@@ -32,7 +32,7 @@ namespace Eloqua.Api.Rest.ClientLibrary.Models.Assets.Campaigns
         public int page { get; set; }
         public int pageSize { get; set; }
         public string searchTerm { get; set; }
-
+        public string orderByField { get; set; }
         #endregion
     }
 }
