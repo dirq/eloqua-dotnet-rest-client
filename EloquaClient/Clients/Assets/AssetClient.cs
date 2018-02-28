@@ -68,6 +68,12 @@ namespace Eloqua.Api.Rest.ClientLibrary.Clients.Assets
         }
         private GenericClient<AccountView> _accountView;
 
+        public GenericClient<AccountField> AccountField
+        {
+            get { return _accountField ?? (_accountField = new GenericClient<AccountField>(BaseClient)); }
+        }
+        private GenericClient<AccountField> _accountField;
+
         #endregion
 
         #region Email
